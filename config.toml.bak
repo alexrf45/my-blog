@@ -1,0 +1,57 @@
+baseURL = 'https://www.cyberfon.link/'
+languageCode = 'en-us'
+title = 'R0l@nd'
+theme = "yinyang"
+[markup]
+  [markup.goldmark]
+      [markup.goldmark.renderer]
+        unsafe = true
+  [markup.highlight]
+      guessSyntax = true
+      noClasses = true
+      style = "bw"
+      tabWidth = 2
+[author]
+  name = "cyber_f0n"
+  homepage = "https://twitter.com/cyber_f0n"
+
+[params]
+headTitle = "R0l@nd"
+mainSections = ["posts"]
+postFooterContent = "<br/><br/><p><a target='_blank' href='/'>Home</p>"
+
+[[params.socials]]
+name = "About Me"
+link = "https://cyber-ram.com"
+[[params.socials]]
+name = "Github"
+link = "https://github.com/alexrf45"
+[[params.socials]]
+name = "LinkedIn"
+link = "https://www.linkedin.com/in/seanfontaine/"
+
+[deployment]
+
+[[deployment.targets]]
+name = "cyberfon-link"
+URL = "s3://www.cyberfon.link?region=us-east-1"
+
+[[deployment.matchers]]
+pattern = "^.+\\.(html|xml|json)$"
+gzip = true
+
+[[deployment.matchers]]
+pattern = "^.+\\.(js|css|svg|ttf)$"
+cacheControl = "max-age=31536000, no-transform, public"
+gzip = true
+
+[[deployment.matchers]]
+pattern = "^.+\\.(png|jpg)$"
+cacheControl = "max-age=31536000, no-transform, public"
+gzip = false
+
+[[deployment.matchers]]
+# Set custom content type for /sitemap.xml
+pattern = "^sitemap\\.xml$"
+contentType = "application/xml"
+gzip = true

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R0l@nd</title>
+    <link>https://www.cyberfon.link/</link>
+    <description>Recent content on R0l@nd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Jul 2022 20:34:23 -0400</lastBuildDate><atom:link href="https://www.cyberfon.link/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test</title>
+      <link>https://www.cyberfon.link/posts/test/</link>
+      <pubDate>Fri, 01 Jul 2022 20:34:23 -0400</pubDate>
+      
+      <guid>https://www.cyberfon.link/posts/test/</guid>
+      <description>This is a test </description>
+    </item>
+    
+  </channel>
+</rss>
