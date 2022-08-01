@@ -6,7 +6,27 @@
     <description>Recent content on R0l@nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Jul 2022 00:40:03 -0400</lastBuildDate><atom:link href="https://www.cyberfon.link/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Jul 2022 18:46:56 -0400</lastBuildDate><atom:link href="https://www.cyberfon.link/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS &amp; Terraform Part I</title>
+      <link>https://www.cyberfon.link/posts/demo/</link>
+      <pubDate>Sun, 31 Jul 2022 18:46:56 -0400</pubDate>
+      
+      <guid>https://www.cyberfon.link/posts/demo/</guid>
+      <description>AWS &amp;amp; Terraform Programmable infrastructure allow professionals to manage on-premises and cloud resources through code instead of management platforms and manual methods traditionally used by IT teams such as the AWC CLI or AWS Console.
+Infastructure As Code (IaC) is an IT practice of codifying and mananging IT infastructure as software/code. Terraform interacts with cloud and on-prem Application Programming Interfaces (APIs) to configure infastructure such as EC2 instances, Virtual Private Cloud (VPC) and Security Groups.</description>
+    </item>
+    
+    <item>
+      <title>AWS &amp; Terraform Part II</title>
+      <link>https://www.cyberfon.link/posts/demo-part-ii/</link>
+      <pubDate>Sun, 31 Jul 2022 18:46:56 -0400</pubDate>
+      
+      <guid>https://www.cyberfon.link/posts/demo-part-ii/</guid>
+      <description>Programmable infrastructure allow professionals to manage on-premises and cloud resources through code instead of management platforms and manual methods traditionally used by IT teams such as the AWC CLI or AWS Console.
+Infastructure As Code (IaC) is an IT practice of codifying and mananging IT infastructure as software/code. Terraform interacts with cloud and on-prem Application Programming Interfaces (APIs) to configure infastructure such as EC2 instances, Virtual Private Cloud (VPC) and Security Groups.</description>
+    </item>
+    
     <item>
       <title>Test4</title>
       <link>https://www.cyberfon.link/posts/test4/</link>

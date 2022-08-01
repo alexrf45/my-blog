@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="cyber_f0n" />
-  <meta property="og:url" content="https://cyberfon.link/posts/test2/index.html" />
-  <link rel="canonical" href="https://cyberfon.link/posts/test2/index.html" /><link rel="alternate" type="application/atom+xml" href="https://cyberfon.link/index.xml" title="Cyber-Ram test">
+  <meta property="og:url" content="https://www.cyberfon.link/posts/demo-part-ii/index.html" />
+  <link rel="canonical" href="https://www.cyberfon.link/posts/demo-part-ii/index.html" /><link rel="alternate" type="application/atom+xml" href="https://www.cyberfon.link/index.xml" title="R0l@nd">
 
   <script type="application/ld+json">
   {
@@ -16,12 +16,12 @@
       "@type" : "BlogPosting",
       "mainEntityOfPage": {
            "@type": "WebPage",
-           "@id": "https:\/\/cyberfon.link\/"
+           "@id": "https:\/\/www.cyberfon.link\/"
       },
       "articleSection" : "posts",
-      "name" : "Test2",
-      "headline" : "Test2",
-      "description" : "",
+      "name" : "AWS \u0026 Terraform Part II",
+      "headline" : "AWS \u0026 Terraform Part II",
+      "description" : "Programmable infrastructure allow professionals to manage on-premises and cloud resources through code instead of management platforms and manual methods traditionally used by IT teams such as the AWC CLI or AWS Console.\nInfastructure As Code (IaC) is an IT practice of codifying and mananging IT infastructure as software\/code. Terraform interacts with cloud and on-prem Application Programming Interfaces (APIs) to configure infastructure such as EC2 instances, Virtual Private Cloud (VPC) and Security Groups.",
       "inLanguage" : "en-US",
       "author" : "cyber_f0n",
       "creator" : "cyber_f0n",
@@ -29,17 +29,19 @@
       "accountablePerson" : "cyber_f0n",
       "copyrightHolder" : "cyber_f0n",
       "copyrightYear" : "2022",
-      "datePublished": "2022-07-02 13:17:14 -0400 EDT",
-      "dateModified" : "2022-07-02 13:17:14 -0400 EDT",
-      "url" : "https:\/\/cyberfon.link\/posts\/test2\/",
+      "datePublished": "2022-07-31 18:46:56 -0400 EDT",
+      "dateModified" : "2022-07-31 18:46:56 -0400 EDT",
+      "url" : "https:\/\/www.cyberfon.link\/posts\/demo-part-ii\/",
       "keywords" : [  ]
   }
 </script>
-<title>Test2</title>
-  <meta property="og:title" content="Test2" />
+<title>AWS &amp; Terraform Part II</title>
+  <meta property="og:title" content="AWS &amp; Terraform Part II" />
   <meta property="og:type" content="article" />
-  <meta property="og:description" content="" />
-  <meta name="description" content="" />
+  <meta property="og:description" content="Programmable infrastructure allow professionals to manage on-premises and cloud resources through code instead of management platforms and manual methods traditionally used by IT teams such as the AWC CLI or AWS Console.
+Infastructure As Code (IaC) is an IT practice of codifying and mananging IT infastructure as software/code. Terraform interacts with cloud and on-prem Application Programming Interfaces (APIs) to configure infastructure such as EC2 instances, Virtual Private Cloud (VPC) and Security Groups." />
+  <meta name="description" content="Programmable infrastructure allow professionals to manage on-premises and cloud resources through code instead of management platforms and manual methods traditionally used by IT teams such as the AWC CLI or AWS Console.
+Infastructure As Code (IaC) is an IT practice of codifying and mananging IT infastructure as software/code. Terraform interacts with cloud and on-prem Application Programming Interfaces (APIs) to configure infastructure such as EC2 instances, Virtual Private Cloud (VPC) and Security Groups." />
   <meta property="og:locale" content="en-us" /><meta property="og:image" content="" />
   
 
@@ -53,7 +55,7 @@
   
 
   <link href="/index.xml" rel="alternate" type="application/rss+xml"
-    title="Cyber-Ram test">
+    title="R0l@nd">
   
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Bungee+Shade" rel="stylesheet">
@@ -74,7 +76,7 @@
 <header>
   <div class="header-title">
     <a href="/"
-      >R0l@and</a
+      >R0l@nd</a
     >
   </div>
   <div class="header-subtitle"></div>
@@ -101,13 +103,13 @@
 
         </div>
         <header class="post-header">
-          <h1 class="post-title">Test2</h1>
+          <h1 class="post-title">AWS &amp; Terraform Part II</h1>
           
           <div class="row post-desc">
             <div class="col-xs-6">
               
-              <time class="post-date" datetime="2022-07-02 13:17:14 EDT">
-                02 Jul 2022
+              <time class="post-date" datetime="2022-07-31 18:46:56 EDT">
+                31 Jul 2022
               </time>
               
             </div>
@@ -124,7 +126,83 @@
 
         <div class="post-content markdown-body">
           
-          
+          <p>Programmable infrastructure allow professionals to manage on-premises and cloud resources through code instead of  management platforms and manual methods traditionally used by IT teams such as the AWC CLI or AWS Console.</p>
+<p>Infastructure As Code (IaC) is an IT practice of codifying and mananging IT infastructure as software/code. Terraform interacts with cloud and on-prem Application Programming Interfaces (APIs) to configure infastructure such as EC2 instances, Virtual Private Cloud (VPC) and Security Groups.  IaC allows for version control and fine tuned configuration management for any organization&rsquo;s IT  posture. Terraform works through a series of configuration files <code>.tf</code>  written in HashiCorp Configuration Lanuage (HCL). These <code>.tf</code> files work in concert to define the resources required and allow for seamless changes based on need.</p>
+<p>Part II of this demo will create the following resources in AWS for a &ldquo;development&rdquo; environment using Terraform through Github Actions:</p>
+<ul>
+<li>VPC</li>
+<li>Public &amp; Private Subnet</li>
+<li>NAT Gateway</li>
+<li>Internet Gateway</li>
+<li>Key-Pair (SSH Key)</li>
+<li>SSH Security Group (needed to ssh into the demo instance)</li>
+<li>AWS EC2 Instance</li>
+</ul>
+<p>There will be two workflows for use in Github Actions. One is automated by a push to the main branch and the other is a manual workflow activated once we are done with the demo:</p>
+<h2 id="prerequisites">Prerequisites:</h2>
+<ul>
+<li>Preferred Linux OS (I am using Manjaro for this demo)</li>
+<li>AWS Account &amp; Command Line Interface w/ access key and secrets
+<ul>
+<li>You may use hard coded AWS credentials in your <code>.aws</code> directory or utilize <code>aws-vault</code> to store access keys and secrets securely.</li>
+</ul>
+</li>
+<li>Git &amp; Github Account (needed to fork repo &amp; add secrets for Github Actions)</li>
+<li>Basic knowledge of Docker and web appd</li>
+<li>Text Editor or IDE such as VSCode (needed to edit resources for Github Actions)</li>
+</ul>
+<h2 id="fork-the-repo--set-up-secrets">Fork The repo &amp; Set up Secrets:</h2>
+<p>Log into your Github account and search for aws-terraform-practice.</p>
+<p>Click on fork:</p>
+<p>![[fork1.png]]
+Set the name to whatever you&rsquo;d like and click create fork.
+![[fork.png]]</p>
+<p>In the new forked repo, you can click Code and copy the URL to clone the repo to your Linux machine.</p>
+<p>![[code_url.png]]</p>
+<p>Click on Settings &gt; Security &gt; Secrets &gt; Actions</p>
+<p>![[settings.png]]
+Click New Repository Secret</p>
+<p>![[secrets.png]]
+Create the following Secrets :</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>AWS_ACCESS_KEY_ID
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>AWS_PROFILE
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>AWS_REGION
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>AWS_SECRET_ACCESS_KEY
+</span></span></code></pre></div><p>![[enter.png]]
+Once they are all added, they should appear at the bottom of the page.</p>
+<p>![[finish.png]]</p>
+<p>In order to add the SSH Public key needed by the <code>ec2_instance.tf</code>  config file, we need to add a Secret called SSH_PUBLIC_KEY.</p>
+<p>Create an SSH Key on your local machine:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ssh-keygen -t ed25519 -C <span style="font-style:italic">&#34;terraform demo&#34;</span> -f ~/.ssh/demo-key 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-style:italic"># lets output the public key for use in the SSH_PUBLIC_KEY Secret:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cat ~/.ssh/demo-key.pub
+</span></span></code></pre></div><p>Create the SSH_PUBLIC_KEY Secret using the output of the <code>cat</code> command above.</p>
+<p>Navigate to the demo directory of the forked repo and open the the <code>ec2_instance.tf</code>  file to reference the location of the SSH Public key as it relates to the Github Runner (this will be in the current directory of the runner as shown in the deploy.yaml steps.)</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="font-weight:bold">resource</span> <span style="font-style:italic">&#34;aws_key_pair&#34; &#34;demo_ssh_key&#34;</span> {
+</span></span><span style="display:flex;"><span>  key_name   = <span style="font-weight:bold">var</span>.<span style="font-weight:bold">key_name</span>
+</span></span><span style="display:flex;"><span>  public_key = <span style="font-weight:bold">file</span>(<span style="font-style:italic">&#34;demo-key.pub&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Navigate to the github/workflows directory and open the deploy.yaml file:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>      <span style="font-style:italic"># On push to main, build or change infrastructure according to Terraform configuration files</span>
+</span></span><span style="display:flex;"><span>    - <span style="font-weight:bold">name</span>: Terraform Apply
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">if</span>: github.ref == &#39;refs/heads/main&#39; &amp;&amp; github.event_name == &#39;push&#39;
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">env</span>:
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">AWS_ACCESS_KEY_ID</span>: ${{ secrets.AWS_ACCESS_KEY_ID }}
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">AWS_SECRET_ACCESS_KEY</span>: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">AWS_REGION</span>: ${{ secrets.AWS_REGION }}
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">AWS_PROFILE</span>: ${{ secrets.AWS_PROFILE }}
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">SSH_PUBLIC_KEY</span>: ${{ secrets.SSH_PUBLIC_KEY }}
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">run</span>: cd demo \ 
+</span></span><span style="display:flex;"><span>      cat $SSH_PUBLIC_KEY &gt; demo-key.pub \
+</span></span><span style="display:flex;"><span>      terraform apply -var-file=&#34;../dev.auto.tfvars&#34; -auto-approve
+</span></span><span style="display:flex;"><span>      
+</span></span></code></pre></div>
         </div>
 
         <div class="row middle-xs">

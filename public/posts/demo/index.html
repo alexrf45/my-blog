@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.101.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="cyber_f0n" />
+  <meta property="og:url" content="https://www.cyberfon.link/posts/demo/index.html" />
+  <link rel="canonical" href="https://www.cyberfon.link/posts/demo/index.html" /><link rel="alternate" type="application/atom+xml" href="https://www.cyberfon.link/index.xml" title="R0l@nd">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/www.cyberfon.link\/"
+      },
+      "articleSection" : "posts",
+      "name" : "AWS \u0026 Terraform Part I",
+      "headline" : "AWS \u0026 Terraform Part I",
+      "description" : "AWS \u0026amp; Terraform Programmable infrastructure allow professionals to manage on-premises and cloud resources through code instead of management platforms and manual methods traditionally used by IT teams such as the AWC CLI or AWS Console.\nInfastructure As Code (IaC) is an IT practice of codifying and mananging IT infastructure as software\/code. Terraform interacts with cloud and on-prem Application Programming Interfaces (APIs) to configure infastructure such as EC2 instances, Virtual Private Cloud (VPC) and Security Groups.",
+      "inLanguage" : "en-US",
+      "author" : "cyber_f0n",
+      "creator" : "cyber_f0n",
+      "publisher": "cyber_f0n",
+      "accountablePerson" : "cyber_f0n",
+      "copyrightHolder" : "cyber_f0n",
+      "copyrightYear" : "2022",
+      "datePublished": "2022-07-31 18:46:56 -0400 EDT",
+      "dateModified" : "2022-07-31 18:46:56 -0400 EDT",
+      "url" : "https:\/\/www.cyberfon.link\/posts\/demo\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>AWS &amp; Terraform Part I</title>
+  <meta property="og:title" content="AWS &amp; Terraform Part I" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="AWS &amp;amp; Terraform Programmable infrastructure allow professionals to manage on-premises and cloud resources through code instead of management platforms and manual methods traditionally used by IT teams such as the AWC CLI or AWS Console.
+Infastructure As Code (IaC) is an IT practice of codifying and mananging IT infastructure as software/code. Terraform interacts with cloud and on-prem Application Programming Interfaces (APIs) to configure infastructure such as EC2 instances, Virtual Private Cloud (VPC) and Security Groups." />
+  <meta name="description" content="AWS &amp;amp; Terraform Programmable infrastructure allow professionals to manage on-premises and cloud resources through code instead of management platforms and manual methods traditionally used by IT teams such as the AWC CLI or AWS Console.
+Infastructure As Code (IaC) is an IT practice of codifying and mananging IT infastructure as software/code. Terraform interacts with cloud and on-prem Application Programming Interfaces (APIs) to configure infastructure such as EC2 instances, Virtual Private Cloud (VPC) and Security Groups." />
+  <meta property="og:locale" content="en-us" /><meta property="og:image" content="" />
+  
+
+  
+    <style>body{font-family:bree serif,sans-serif;-webkit-font-smoothing:antialiased;margin:0 20px}article{max-width:800px;margin-left:auto;margin-right:auto}a{color:#000;text-decoration:none}a:hover{font-weight:600;text-decoration:underline}.post-ads{margin:50px 0}.markdown-body{font-size:18px;max-width:100%}.markdown-body a{text-decoration:underline;text-decoration-color:#000}.markdown-body blockquote{margin:0;padding:0 1em;color:#57606a;border-left:.25em solid #d0d7de}.markdown-body pre{padding:16px;overflow:auto;border-radius:10px}.markdown-body code{padding:.2em .4em;font-size:85%;background-color:#f6f8fa;border-radius:6px}.markdown-body pre>code{padding:0;font-size:100%;background-color:inherit;border:0}.Chinese .markdown-body{line-height:200%}.site-date-catalog{font-size:2rem}.header-title{font-size:2rem;font-weight:700;margin-top:32px;font-family:bungee shade,sans-serif}.header-title a{text-decoration:none}.header-subtitle{color:#666}.header-items{margin:10px 0}.header-item{margin:0 5px}.header-line{width:100%;border-width:2px;border-color:#482936;border-style:solid none none none}.lang-switch{font-weight:600}#posts-list{min-height:600px}.posts-line{font-size:1.2rem;margin:12px 0}.posts-categories{font-size:.8rem;margin:auto;text-align:center}.posts-category{padding:3px 0;border:#000 2px solid;border-radius:5px}.site-footer{margin-top:50px}.site-footer-item{margin-right:12px}.post-content img{max-width:100%;display:block;margin-right:auto;margin-top:12px}.post-header{margin-bottom:50px}.post-title{font-size:2rem;font-weight:600}.post-tags{display:inline;font-weight:600;padding:2px 5px;margin-right:6px;border:#000 2px solid;border-radius:5px}.post-date{font-weight:800;font-style:italic}.post-author{float:right;font-weight:600}.page-content{min-height:60%}.post-content{margin-bottom:50px}.post-content p{hyphens:auto;line-height:1.8;text-justify:ideographic;margin-bottom:1em}.related-content{border-width:3px;border-style:solid;border-color:#000;padding:0 10px;margin-bottom:50px;margin-top:100px}.related-content li{margin:5px 0}.taxonomy-term{font-size:3rem}.gallery-img{text-align:center}.gallery-img span{text-align:center}.gallery-img-desc{font-size:.8em;font-weight:800}#disqus_thread{position:relative}#disqus_thread:after{content:"";display:block;height:55px;width:100%;position:absolute;bottom:0;background:#fff}@media screen and (max-width:600px){.header-title,.header-subtitle,.header-items{text-align:center}.posts-line{font-size:16px}.markdown-body{font-size:16px}.post-title{font-size:2rem}.post-content p{letter-spacing:.05em}}@media screen and (max-width:48em){.posts-category{display:none}}</style>
+  
+  
+    <style>.container,.container-fluid{margin-right:auto;margin-left:auto}.container-fluid{padding-right:2rem;padding-left:2rem}.row{box-sizing:border-box;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:0;-ms-flex:0 1 auto;flex:initial;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-.5rem;margin-left:-.5rem}.row.reverse{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}.col.reverse{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}.col-xs,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-offset-0,.col-xs-offset-1,.col-xs-offset-10,.col-xs-offset-11,.col-xs-offset-12,.col-xs-offset-2,.col-xs-offset-3,.col-xs-offset-4,.col-xs-offset-5,.col-xs-offset-6,.col-xs-offset-7,.col-xs-offset-8,.col-xs-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-xs{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-xs-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-xs-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-xs-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-xs-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-xs-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-xs-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-xs-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-xs-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-xs-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-xs-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-xs-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-xs-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-xs-offset-0{margin-left:0}.col-xs-offset-1{margin-left:8.33333333%}.col-xs-offset-2{margin-left:16.66666667%}.col-xs-offset-3{margin-left:25%}.col-xs-offset-4{margin-left:33.33333333%}.col-xs-offset-5{margin-left:41.66666667%}.col-xs-offset-6{margin-left:50%}.col-xs-offset-7{margin-left:58.33333333%}.col-xs-offset-8{margin-left:66.66666667%}.col-xs-offset-9{margin-left:75%}.col-xs-offset-10{margin-left:83.33333333%}.col-xs-offset-11{margin-left:91.66666667%}.start-xs{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-xs{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-xs{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-xs{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-xs{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-xs{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-xs{-ms-flex-pack:distribute;justify-content:space-around}.between-xs{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-xs{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-xs{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}@media only screen and (min-width:48em){.container{width:49rem}.col-sm,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-offset-0,.col-sm-offset-1,.col-sm-offset-10,.col-sm-offset-11,.col-sm-offset-12,.col-sm-offset-2,.col-sm-offset-3,.col-sm-offset-4,.col-sm-offset-5,.col-sm-offset-6,.col-sm-offset-7,.col-sm-offset-8,.col-sm-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-sm{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-sm-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-sm-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-sm-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-sm-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-sm-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-sm-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-sm-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-sm-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-sm-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-sm-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-sm-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-sm-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-sm-offset-0{margin-left:0}.col-sm-offset-1{margin-left:8.33333333%}.col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-3{margin-left:25%}.col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-5{margin-left:41.66666667%}.col-sm-offset-6{margin-left:50%}.col-sm-offset-7{margin-left:58.33333333%}.col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-9{margin-left:75%}.col-sm-offset-10{margin-left:83.33333333%}.col-sm-offset-11{margin-left:91.66666667%}.start-sm{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-sm{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-sm{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-sm{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-sm{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-sm{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-sm{-ms-flex-pack:distribute;justify-content:space-around}.between-sm{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-sm{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-sm{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:64em){.container{width:65rem}.col-md,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-offset-0,.col-md-offset-1,.col-md-offset-10,.col-md-offset-11,.col-md-offset-12,.col-md-offset-2,.col-md-offset-3,.col-md-offset-4,.col-md-offset-5,.col-md-offset-6,.col-md-offset-7,.col-md-offset-8,.col-md-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-md{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-md-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-md-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-md-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-md-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-md-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-md-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-md-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-md-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-md-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-md-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-md-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-md-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-md-offset-0{margin-left:0}.col-md-offset-1{margin-left:8.33333333%}.col-md-offset-2{margin-left:16.66666667%}.col-md-offset-3{margin-left:25%}.col-md-offset-4{margin-left:33.33333333%}.col-md-offset-5{margin-left:41.66666667%}.col-md-offset-6{margin-left:50%}.col-md-offset-7{margin-left:58.33333333%}.col-md-offset-8{margin-left:66.66666667%}.col-md-offset-9{margin-left:75%}.col-md-offset-10{margin-left:83.33333333%}.col-md-offset-11{margin-left:91.66666667%}.start-md{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-md{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-md{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-md{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-md{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-md{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-md{-ms-flex-pack:distribute;justify-content:space-around}.between-md{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-md{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-md{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:75em){.container{width:76rem}.col-lg,.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-offset-0,.col-lg-offset-1,.col-lg-offset-10,.col-lg-offset-11,.col-lg-offset-12,.col-lg-offset-2,.col-lg-offset-3,.col-lg-offset-4,.col-lg-offset-5,.col-lg-offset-6,.col-lg-offset-7,.col-lg-offset-8,.col-lg-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-lg{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-lg-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-lg-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-lg-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-lg-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-lg-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-lg-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-lg-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-lg-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-lg-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-lg-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-lg-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-lg-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-lg-offset-0{margin-left:0}.col-lg-offset-1{margin-left:8.33333333%}.col-lg-offset-2{margin-left:16.66666667%}.col-lg-offset-3{margin-left:25%}.col-lg-offset-4{margin-left:33.33333333%}.col-lg-offset-5{margin-left:41.66666667%}.col-lg-offset-6{margin-left:50%}.col-lg-offset-7{margin-left:58.33333333%}.col-lg-offset-8{margin-left:66.66666667%}.col-lg-offset-9{margin-left:75%}.col-lg-offset-10{margin-left:83.33333333%}.col-lg-offset-11{margin-left:91.66666667%}.start-lg{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-lg{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-lg{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-lg{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-lg{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-lg{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-lg{-ms-flex-pack:distribute;justify-content:space-around}.between-lg{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-lg{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-lg{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}</style>
+  
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="R0l@nd">
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Bungee+Shade" rel="stylesheet">
+  
+  
+
+  
+  
+</head>
+
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
+<header>
+  <div class="header-title">
+    <a href="/"
+      >R0l@nd</a
+    >
+  </div>
+  <div class="header-subtitle"></div>
+</header>
+<div class="row end-md center-xs header-items">
+  
+  <div class="header-item">
+    <a href="https://cyber-ram.com" target="_blank">About Me</a>
+  </div>
+  
+  <div class="header-item">
+    <a href="https://github.com/alexrf45" target="_blank">Github</a>
+  </div>
+  
+  <div class="header-item">
+    <a href="https://www.linkedin.com/in/seanfontaine/" target="_blank">LinkedIn</a>
+  </div>
+  
+</div>
+<div class="row end-xs">
+   
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">AWS &amp; Terraform Part I</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2022-07-31 18:46:56 EDT">
+                31 Jul 2022
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://twitter.com/cyber_f0n">@cyber_f0n</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <h1 id="aws--terraform">AWS &amp; Terraform</h1>
+<hr>
+<p>Programmable infrastructure allow professionals to manage on-premises and cloud resources through code instead of  management platforms and manual methods traditionally used by IT teams such as the AWC CLI or AWS Console.</p>
+<p>Infastructure As Code (IaC) is an IT practice of codifying and mananging IT infastructure as software/code. Terraform interacts with cloud and on-prem Application Programming Interfaces (APIs) to configure infastructure such as EC2 instances, Virtual Private Cloud (VPC) and Security Groups.  IaC allows for version control and fine tuned configuration management for any organization&rsquo;s IT  posture. Terraform works through a series of configuration files <code>.tf</code>  written in HashiCorp Configuration Lanuage (HCL). These <code>.tf</code> files work in concert to define the resources required and allow for seamless changes based on need.</p>
+<p>This demo will create the following resources in AWS for a &ldquo;development&rdquo; environment and a &ldquo;production&rdquo; environment.</p>
+<ul>
+<li>VPC</li>
+<li>Public &amp; Private Subnet</li>
+<li>NAT Gateway</li>
+<li>Internet Gateway</li>
+<li>Key-Pair (SSH Key)</li>
+<li>SSH Security Group (needed to ssh into the demo instance)</li>
+<li>AWS EC2 Instance</li>
+</ul>
+<h2 id="prerequisites">Prerequisites:</h2>
+<ul>
+<li>Preferred Linux OS (I am using Manjaro for this demo)</li>
+<li>AWS Account &amp; Command Line Interface w/ access key and secrets
+<ul>
+<li>You may use hard coded AWS credentials in your <code>.aws</code> directory or utilize <code>aws-vault</code> to store access keys and secrets securely.</li>
+</ul>
+</li>
+<li>Git</li>
+<li>Basic knowledge of Docker and web apps
+-(Optional) Text Editor or IDE such as VSCode</li>
+</ul>
+<h2 id="terraform-environment">Terraform Environment:</h2>
+<p>Install terraform via  your preferred package manager:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="font-style:italic"># Debian/Ubuntu:</span>
+</span></span><span style="display:flex;"><span>sudo apt-get update &amp;&amp; sudo apt-get install -y gnupg software-properties-common curl
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt-add-repository <span style="font-style:italic">&#34;deb [arch=amd64] https://apt.releases.hashicorp.com </span><span style="font-weight:bold">$(</span>lsb_release -cs<span style="font-weight:bold">)</span><span style="font-style:italic"> main&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt-get update &amp;&amp; sudo apt-get install terraform
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-style:italic">#Arch/ Manjaro:</span>
+</span></span><span style="display:flex;"><span>sudo pacman -S terraform
+</span></span></code></pre></div><p>Once installed verify install:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>terraform -help
+</span></span></code></pre></div><p>Clone the demo GitHub repository and cd into the directory:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/alexrf45/aws-terraform-practice.git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cd aws-terraform-practice
+</span></span></code></pre></div><p>Below is a breakdown of the provided files in the directory:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── demo
+</span></span><span style="display:flex;"><span>│   ├── docker.sh
+</span></span><span style="display:flex;"><span>│   ├── ec2_instance.tf
+</span></span><span style="display:flex;"><span>│   ├── ec2_security_group.tf
+</span></span><span style="display:flex;"><span>│   ├── outputs.tf
+</span></span><span style="display:flex;"><span>│   ├── provider.tf
+</span></span><span style="display:flex;"><span>│   ├── vars.tf
+</span></span><span style="display:flex;"><span>│   └── vpc_creation.tf
+</span></span><span style="display:flex;"><span>├── dev.auto.tfvars
+</span></span><span style="display:flex;"><span>├── prod.auto.tfvars
+</span></span><span style="display:flex;"><span>├── provider.tf
+</span></span><span style="display:flex;"><span>└── README.md
+</span></span></code></pre></div><h2 id="dockersh---a-simple-bash-script-that-installs-docker-and-enables-non-root-permissions-setting-up-scripts-for-use-in-config-files-can-help-provide-a-consistent-environement-for-developers-and-administrators"><em>docker.sh</em> - A simple bash script that installs docker and enables non-root permissions. Setting up scripts for use in config files can help provide a consistent environement for developers and administrators.</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="">#! /bin/bash
+</span></span></span><span style="display:flex;"><span><span style=""></span>
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get upgrade
+</span></span><span style="display:flex;"><span>curl -fsSL https://get.docker.com -o get-docker.sh
+</span></span><span style="display:flex;"><span>sh get-docker.sh
+</span></span><span style="display:flex;"><span>sudo usermod -aG docker ubuntu
+</span></span></code></pre></div><h2 id="ec2_instancetf---the-config-file-for-creating-the-demo-ec2-instance">ec2_instance.tf - The config file for creating the demo EC2 Instance.</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">resource</span> <span style="font-style:italic">&#34;aws_key_pair&#34; &#34;demo_ssh_key&#34;</span> {
+</span></span><span style="display:flex;"><span>  key_name   = <span style="font-weight:bold">var</span>.<span style="font-weight:bold">key_name</span>
+</span></span><span style="display:flex;"><span>  public_key = <span style="font-weight:bold">file</span>(<span style="font-style:italic">&#34;~/.ssh/demo-key.pub&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">resource</span> <span style="font-style:italic">&#34;aws_instance&#34; &#34;terraform_ec2&#34;</span> {
+</span></span><span style="display:flex;"><span>  ami                         = <span style="font-weight:bold">var</span>.<span style="font-weight:bold">ami</span>
+</span></span><span style="display:flex;"><span>  instance_type               = <span style="font-weight:bold">var</span>.<span style="font-weight:bold">instance_type</span>
+</span></span><span style="display:flex;"><span>  associate_public_ip_address = <span style="font-style:italic">&#34;true&#34;</span>
+</span></span><span style="display:flex;"><span>  key_name                    = <span style="font-weight:bold">var</span>.<span style="font-weight:bold">key_name</span>
+</span></span><span style="display:flex;"><span>  vpc_security_group_ids      = [<span style="font-weight:bold">aws_security_group</span>.<span style="font-weight:bold">terraform</span><span style="">-</span><span style="font-weight:bold">ssh</span>.<span style="font-weight:bold">id</span>]
+</span></span><span style="display:flex;"><span>  subnet_id                   = <span style="font-weight:bold">aws_subnet</span>.<span style="font-weight:bold">dev</span><span style="">-</span><span style="font-weight:bold">public</span><span style="">-</span><span style="font-weight:bold">subnet</span>.<span style="font-weight:bold">id</span>
+</span></span><span style="display:flex;"><span>  user_data                   = <span style="font-weight:bold">file</span>(<span style="font-style:italic">&#34;docker.sh&#34;</span>)
+</span></span><span style="display:flex;"><span>  tags                        = <span style="font-weight:bold">var</span>.<span style="font-weight:bold">resource_tags</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="ec2_security_grouptf---this-config-files-creates-a-simple-security-group-for-enabling-ssh-access-to-our-demo-ec2-instance">ec2_security_group.tf - This config files creates a simple security group for enabling SSH access to our demo EC2 instance.</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="font-weight:bold">resource</span> <span style="font-style:italic">&#34;aws_security_group&#34; &#34;terraform-ssh&#34;</span> {
+</span></span><span style="display:flex;"><span>  name        = <span style="font-style:italic">&#34;terraform-ssh-sg&#34;</span>
+</span></span><span style="display:flex;"><span>  description = <span style="font-style:italic">&#34;Allow SSH inbound traffic&#34;</span>
+</span></span><span style="display:flex;"><span>  vpc_id      = <span style="font-weight:bold">aws_vpc</span>.<span style="font-weight:bold">dev</span>.<span style="font-weight:bold">id</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">ingress</span> {
+</span></span><span style="display:flex;"><span>    description = <span style="font-weight:bold">var</span>.<span style="font-weight:bold">description</span>
+</span></span><span style="display:flex;"><span>    from_port   = 22
+</span></span><span style="display:flex;"><span>    to_port     = 22
+</span></span><span style="display:flex;"><span>    protocol    = <span style="font-style:italic">&#34;tcp&#34;</span>
+</span></span><span style="display:flex;"><span>    cidr_blocks = [<span style="font-style:italic">&#34;0.0.0.0/0&#34;</span>]
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">egress</span> {
+</span></span><span style="display:flex;"><span>    from_port        = 0
+</span></span><span style="display:flex;"><span>    to_port          = 0
+</span></span><span style="display:flex;"><span>    protocol         = <span style="font-style:italic">&#34;-1&#34;</span>
+</span></span><span style="display:flex;"><span>    cidr_blocks      = [<span style="font-style:italic">&#34;0.0.0.0/0&#34;</span>]
+</span></span><span style="display:flex;"><span>    ipv6_cidr_blocks = [<span style="font-style:italic">&#34;::/0&#34;</span>]
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  tags = <span style="font-weight:bold">var</span>.<span style="font-weight:bold">resource_tags</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="outputstf---this-config-file-exports-outputs-from-the-creation-of-each-resource-for-use-in-other-resource-config-files--this-is-neccessary-to-add-the-security-group-to-the-ec2-instance-and-configure-the-vpc-properly">outputs.tf - This config file exports outputs from the creation of each resource for use in other resource config files.  (This is neccessary to add the security group to the EC2 instance and configure the VPC properly)</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="font-weight:bold">output</span> <span style="font-style:italic">&#34;vpc_id&#34;</span> {
+</span></span><span style="display:flex;"><span>  description = <span style="font-style:italic">&#34;The ID of the VPC&#34;</span>
+</span></span><span style="display:flex;"><span>  value       = <span style="font-weight:bold">try</span>(<span style="font-weight:bold">aws_vpc</span>.<span style="font-weight:bold">dev</span>.<span style="font-weight:bold">id</span>, <span style="font-style:italic">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">output</span> <span style="font-style:italic">&#34;vpc_cidr_block&#34;</span> {
+</span></span><span style="display:flex;"><span>  description = <span style="font-style:italic">&#34;The CIDR block of the VPC&#34;</span>
+</span></span><span style="display:flex;"><span>  value       = <span style="font-weight:bold">try</span>(<span style="font-weight:bold">aws_vpc</span>.<span style="font-weight:bold">dev</span>.<span style="font-weight:bold">cidr_block</span>, <span style="font-style:italic">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">output</span> <span style="font-style:italic">&#34;vpc_arn&#34;</span> {
+</span></span><span style="display:flex;"><span>  description = <span style="font-style:italic">&#34;The ARN of the VPC&#34;</span>
+</span></span><span style="display:flex;"><span>  value       = <span style="font-weight:bold">try</span>(<span style="font-weight:bold">aws_vpc</span>.<span style="font-weight:bold">dev</span>.<span style="font-weight:bold">arn</span>, <span style="font-style:italic">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">output</span> <span style="font-style:italic">&#34;public_subnets&#34;</span> {
+</span></span><span style="display:flex;"><span>  description = <span style="font-style:italic">&#34;List of IDs of public subnets&#34;</span>
+</span></span><span style="display:flex;"><span>  value       = <span style="font-weight:bold">aws_subnet</span>.<span style="font-weight:bold">dev</span><span style="">-</span><span style="font-weight:bold">public</span><span style="">-</span><span style="font-weight:bold">subnet</span>.<span style="font-weight:bold">id</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">output</span> <span style="font-style:italic">&#34;private_subnets&#34;</span> {
+</span></span><span style="display:flex;"><span>  description = <span style="font-style:italic">&#34;List of IDs of private subnets&#34;</span>
+</span></span><span style="display:flex;"><span>  value       = <span style="font-weight:bold">aws_subnet</span>.<span style="font-weight:bold">dev</span><span style="">-</span><span style="font-weight:bold">private</span><span style="">-</span><span style="font-weight:bold">subnet</span>.<span style="font-weight:bold">id</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">output</span> <span style="font-style:italic">&#34;public_ip&#34;</span> {
+</span></span><span style="display:flex;"><span>  description = <span style="font-style:italic">&#34;The public IP address assigned to the instance, if applicable. NOTE: If you are using an aws_eip with your instance, you should refer to the EIP&#39;s address directly and not use `public_ip` as this field will change after the EIP is attached&#34;</span>
+</span></span><span style="display:flex;"><span>  value       = <span style="font-weight:bold">aws_instance</span>.<span style="font-weight:bold">terraform_ec2</span>.<span style="font-weight:bold">public_ip</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">output</span> <span style="font-style:italic">&#34;id&#34;</span> {
+</span></span><span style="display:flex;"><span>  description = <span style="font-style:italic">&#34;The ID of the instance&#34;</span>
+</span></span><span style="display:flex;"><span>  value       = <span style="font-weight:bold">aws_instance</span>.<span style="font-weight:bold">terraform_ec2</span>.<span style="font-weight:bold">id</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="providertf---this-config-files-sets-the-provider-as-aws-to-ensure-we-are-interacting-with-the-aws-api-you-can-add-other-providers-as-needed-to-keep-an-easy-to-reference-list-for-your-config-files">provider.tf - This config files sets the provider as AWS to ensure we are interacting with the AWS API. You can add other providers as needed to keep an easy to reference list for your config files.</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="font-weight:bold">terraform</span> {
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">required_providers</span> {
+</span></span><span style="display:flex;"><span>    aws = {
+</span></span><span style="display:flex;"><span>      source  = <span style="font-style:italic">&#34;hashicorp/aws&#34;</span>
+</span></span><span style="display:flex;"><span>      version = <span style="font-style:italic">&#34;~&gt; 4.16&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  required_version = &#34;&gt;= 1.2.0<span style="">&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">provider</span> <span style="font-style:italic">&#34;aws&#34;</span> {
+</span></span><span style="display:flex;"><span>  region = <span style="font-weight:bold">var</span>.<span style="font-weight:bold">aws_region</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="varstf---this-config-files-declares-variables-needed-for-each-resource-config-file-this-config-file-also-allows-us-to-utilize-a-tfvars-file-to-pass-variable-values-to-the-resource-configuration-during-run-time-a-variables-file-helps-reduce-the-need-for-manual-alteration-of-config-files">vars.tf - This config files declares variables needed for each resource config file. This config file also allows us to utilize a <code>.tfvars</code> file to pass variable values to the resource configuration during run time. A variables file helps reduce the need for manual alteration of config files.</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="font-weight:bold">variable</span> <span style="font-style:italic">&#34;aws_region&#34;</span> {
+</span></span><span style="display:flex;"><span>  description = <span style="font-style:italic">&#34;AWS region&#34;</span>
+</span></span><span style="display:flex;"><span>  type        = <span style="font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span>  default     = <span style="font-style:italic">&#34;us-east-1&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">variable</span> <span style="font-style:italic">&#34;resource_tags&#34;</span> {
+</span></span><span style="display:flex;"><span>  description = <span style="font-style:italic">&#34;Tags to set for all resources&#34;</span>
+</span></span><span style="display:flex;"><span>  type        = <span style="font-weight:bold">map</span>(<span style="font-weight:bold">string</span>)
+</span></span><span style="display:flex;"><span>  default = {
+</span></span><span style="display:flex;"><span>    project     = <span style="font-style:italic">&#34;test-project&#34;</span>,
+</span></span><span style="display:flex;"><span>    environment = <span style="font-style:italic">&#34;dev&#34;</span>
+</span></span><span style="display:flex;"><span>    Name        = <span style="font-style:italic">&#34;Development&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">variable</span> <span style="font-style:italic">&#34;dev_vpc_cidr&#34;</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">variable</span> <span style="font-style:italic">&#34;public_subnets&#34;</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">variable</span> <span style="font-style:italic">&#34;private_subnets&#34;</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">variable</span> <span style="font-style:italic">&#34;ami&#34;</span> {
+</span></span><span style="display:flex;"><span>  type    = <span style="font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span>  default = <span style="font-style:italic">&#34;ami-052efd3df9dad4825&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">variable</span> <span style="font-style:italic">&#34;instance_type&#34;</span> {
+</span></span><span style="display:flex;"><span>  description = <span style="font-style:italic">&#34;EC2 Instance type&#34;</span>
+</span></span><span style="display:flex;"><span>  type        = <span style="font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span>  default     = <span style="font-style:italic">&#34;t2-micro&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">variable</span> <span style="font-style:italic">&#34;key_name&#34;</span> {
+</span></span><span style="display:flex;"><span>  description = <span style="font-style:italic">&#34;Name of the associated ec2 key pair&#34;</span>
+</span></span><span style="display:flex;"><span>  type        = <span style="font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span>  default     = <span style="font-style:italic">&#34;dev-demo&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">variable</span> <span style="font-style:italic">&#34;description&#34;</span> {
+</span></span><span style="display:flex;"><span>  description = <span style="font-style:italic">&#34;Description of security group&#34;</span>
+</span></span><span style="display:flex;"><span>  type        = <span style="font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span>  default     = <span style="font-style:italic">&#34;SSH&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="vpc_creationtf---this-config-file-creates-a-new-vpc-network-for-our-demo">vpc_creation.tf - This config file creates a new VPC network for our demo.</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="font-weight:bold">resource</span> <span style="font-style:italic">&#34;aws_vpc&#34; &#34;dev&#34;</span> {
+</span></span><span style="display:flex;"><span>  cidr_block           = <span style="font-weight:bold">var</span>.<span style="font-weight:bold">dev_vpc_cidr</span>
+</span></span><span style="display:flex;"><span>  instance_tenancy     = <span style="font-style:italic">&#34;default&#34;</span>
+</span></span><span style="display:flex;"><span>  enable_dns_support   = <span style="font-style:italic">&#34;true&#34;</span>
+</span></span><span style="display:flex;"><span>  enable_dns_hostnames = <span style="font-style:italic">&#34;true&#34;</span>
+</span></span><span style="display:flex;"><span>  tags                 = <span style="font-weight:bold">var</span>.<span style="font-weight:bold">resource_tags</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">resource</span> <span style="font-style:italic">&#34;aws_internet_gateway&#34; &#34;dev-IGW&#34;</span> {<span style="font-style:italic"> # Creating Internet Gateway
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  vpc_id = <span style="font-weight:bold">aws_vpc</span>.<span style="font-weight:bold">dev</span>.<span style="font-weight:bold">id</span><span style="font-style:italic">                   # vpc_id will be generated after we create VPC
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">resource</span> <span style="font-style:italic">&#34;aws_subnet&#34; &#34;dev-private-subnet&#34;</span> {
+</span></span><span style="display:flex;"><span>  vpc_id     = <span style="font-weight:bold">aws_vpc</span>.<span style="font-weight:bold">dev</span>.<span style="font-weight:bold">id</span>
+</span></span><span style="display:flex;"><span>  cidr_block = <span style="font-weight:bold">var</span>.<span style="font-weight:bold">private_subnets</span><span style="font-style:italic"> # CIDR block of private subnets
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  tags       = <span style="font-weight:bold">var</span>.<span style="font-weight:bold">resource_tags</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">resource</span> <span style="font-style:italic">&#34;aws_subnet&#34; &#34;dev-public-subnet&#34;</span> {
+</span></span><span style="display:flex;"><span>  vpc_id     = <span style="font-weight:bold">aws_vpc</span>.<span style="font-weight:bold">dev</span>.<span style="font-weight:bold">id</span>
+</span></span><span style="display:flex;"><span>  cidr_block = <span style="font-weight:bold">var</span>.<span style="font-weight:bold">public_subnets</span><span style="font-style:italic"> # CIDR block of public subnets
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  tags       = <span style="font-weight:bold">var</span>.<span style="font-weight:bold">resource_tags</span>
+</span></span><span style="display:flex;"><span>}<span style="font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"># Route table for Public Subnet&#39;s
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="font-weight:bold">resource</span> <span style="font-style:italic">&#34;aws_route_table&#34; &#34;dev-public-rt&#34;</span> {<span style="font-style:italic"> # Creating RT for Public Subnet
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  vpc_id = <span style="font-weight:bold">aws_vpc</span>.<span style="font-weight:bold">dev</span>.<span style="font-weight:bold">id</span>
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">route</span> {
+</span></span><span style="display:flex;"><span>    cidr_block = <span style="font-style:italic">&#34;0.0.0.0/0&#34;</span><span style="font-style:italic"> # Traffic from Public Subnet reaches Internet via Internet Gateway
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>    gateway_id = <span style="font-weight:bold">aws_internet_gateway</span>.<span style="font-weight:bold">dev</span><span style="">-</span><span style="font-weight:bold">IGW</span>.<span style="font-weight:bold">id</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  tags = <span style="font-weight:bold">var</span>.<span style="font-weight:bold">resource_tags</span>
+</span></span><span style="display:flex;"><span>}<span style="font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">#Route table for Private Subnet&#39;s
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="font-weight:bold">resource</span> <span style="font-style:italic">&#34;aws_route_table&#34; &#34;dev-private-rt&#34;</span> {<span style="font-style:italic"> # Creating RT for Private Subnet
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  vpc_id = <span style="font-weight:bold">aws_vpc</span>.<span style="font-weight:bold">dev</span>.<span style="font-weight:bold">id</span>
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">route</span> {
+</span></span><span style="display:flex;"><span>    cidr_block     = <span style="font-style:italic">&#34;0.0.0.0/0&#34;</span><span style="font-style:italic"> # Traffic from Private Subnet reaches Internet via NAT Gateway
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>    nat_gateway_id = <span style="font-weight:bold">aws_nat_gateway</span>.<span style="font-weight:bold">NATgw</span>.<span style="font-weight:bold">id</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  tags = <span style="font-weight:bold">var</span>.<span style="font-weight:bold">resource_tags</span>
+</span></span><span style="display:flex;"><span>}<span style="font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">#Route table Association with Public Subnet&#39;s
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="font-weight:bold">resource</span> <span style="font-style:italic">&#34;aws_route_table_association&#34; &#34;dev-public-rt-association&#34;</span> {
+</span></span><span style="display:flex;"><span>  subnet_id      = <span style="font-weight:bold">aws_subnet</span>.<span style="font-weight:bold">dev</span><span style="">-</span><span style="font-weight:bold">public</span><span style="">-</span><span style="font-weight:bold">subnet</span>.<span style="font-weight:bold">id</span>
+</span></span><span style="display:flex;"><span>  route_table_id = <span style="font-weight:bold">aws_route_table</span>.<span style="font-weight:bold">dev</span><span style="">-</span><span style="font-weight:bold">public</span><span style="">-</span><span style="font-weight:bold">rt</span>.<span style="font-weight:bold">id</span>
+</span></span><span style="display:flex;"><span>}<span style="font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">#Route table Association with Private Subnet&#39;s
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="font-weight:bold">resource</span> <span style="font-style:italic">&#34;aws_route_table_association&#34; &#34;dev-private-rt-association&#34;</span> {
+</span></span><span style="display:flex;"><span>  subnet_id      = <span style="font-weight:bold">aws_subnet</span>.<span style="font-weight:bold">dev</span><span style="">-</span><span style="font-weight:bold">private</span><span style="">-</span><span style="font-weight:bold">subnet</span>.<span style="font-weight:bold">id</span>
+</span></span><span style="display:flex;"><span>  route_table_id = <span style="font-weight:bold">aws_route_table</span>.<span style="font-weight:bold">dev</span><span style="">-</span><span style="font-weight:bold">private</span><span style="">-</span><span style="font-weight:bold">rt</span>.<span style="font-weight:bold">id</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">resource</span> <span style="font-style:italic">&#34;aws_eip&#34; &#34;devnatIP&#34;</span> {
+</span></span><span style="display:flex;"><span>  vpc  = <span style="">true</span>
+</span></span><span style="display:flex;"><span>  tags = <span style="font-weight:bold">var</span>.<span style="font-weight:bold">resource_tags</span>
+</span></span><span style="display:flex;"><span>}<span style="font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">#Creating the NAT Gateway using subnet_id and allocation_id
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="font-weight:bold">resource</span> <span style="font-style:italic">&#34;aws_nat_gateway&#34; &#34;NATgw&#34;</span> {
+</span></span><span style="display:flex;"><span>  allocation_id = <span style="font-weight:bold">aws_eip</span>.<span style="font-weight:bold">devnatIP</span>.<span style="font-weight:bold">id</span>
+</span></span><span style="display:flex;"><span>  subnet_id     = <span style="font-weight:bold">aws_subnet</span>.<span style="font-weight:bold">dev</span><span style="">-</span><span style="font-weight:bold">public</span><span style="">-</span><span style="font-weight:bold">subnet</span>.<span style="font-weight:bold">id</span>
+</span></span><span style="display:flex;"><span>  tags          = <span style="font-weight:bold">var</span>.<span style="font-weight:bold">resource_tags</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="devautotfvars---tfvars-files-allow-us-to-manage-variable-assignments-systematically-in-a-file-with-the-extension-tfvars-or-tfvarsjson">dev.auto.tfvars - <code>.tfvars</code> files allow us to manage variable assignments systematically in a file with the extension .tfvars or .tfvars.json.</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span>aws_region = <span style="font-style:italic">&#34;us-east-1&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>availability_zone_names = [
+</span></span><span style="display:flex;"><span>  <span style="font-style:italic">&#34;us-east-1d&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="font-style:italic">&#34;us-east-1e&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="font-style:italic">&#34;us-east-1f&#34;</span>
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>instance_type = <span style="font-style:italic">&#34;t2.micro&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>key_name = <span style="font-style:italic">&#34;dev-demo&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ami = <span style="font-style:italic">&#34;ami-052efd3df9dad4825&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dev_vpc_cidr    = <span style="font-style:italic">&#34;10.0.0.0/16&#34;</span>
+</span></span><span style="display:flex;"><span>public_subnets  = <span style="font-style:italic">&#34;10.0.1.0/24&#34;</span>
+</span></span><span style="display:flex;"><span>private_subnets = <span style="font-style:italic">&#34;10.0.2.0/24&#34;</span>
+</span></span></code></pre></div><h2 id="prodautotfvars---same-as-devautotfvars-with-a-few-changes-to-simulate-a-production-environment-we-will-not-use-all-the-variable-declared-here-today">prod.auto.tfvars - Same as <code>dev.auto.tfvars</code> with a few changes to simulate a production environment. We will not use all the variable declared here today.</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span>aws_region = <span style="font-style:italic">&#34;us-east-1&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>availability_zone_names = [
+</span></span><span style="display:flex;"><span>  <span style="font-style:italic">&#34;us-east-1a&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="font-style:italic">&#34;us-east-1b&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="font-style:italic">&#34;us-east-1c&#34;</span>
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>network = <span style="font-style:italic">&#34;10.0.1&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>instance_type = <span style="font-style:italic">&#34;t2.micro&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>key_name = <span style="font-style:italic">&#34;demo-prod&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>volume_tags = {
+</span></span><span style="display:flex;"><span>  &#34;Name&#34;  = <span style="font-style:italic">&#34;Demo&#34;</span>
+</span></span><span style="display:flex;"><span>  &#34;Owner&#34; = <span style="font-style:italic">&#34;Demo-Prod&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ami = <span style="font-style:italic">&#34;ami-052efd3df9dad4825&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dev_vpc_cidr    = <span style="font-style:italic">&#34;10.0.0.0/16&#34;</span>
+</span></span><span style="display:flex;"><span>public_subnets  = <span style="font-style:italic">&#34;10.0.1.0/24&#34;</span>
+</span></span><span style="display:flex;"><span>private_subnets = <span style="font-style:italic">&#34;10.0.2.0/24&#34;</span>
+</span></span></code></pre></div><p>A <code>providers.tf</code> file is maintained in the root directory and can be copied to new resource directories as needed i.e <code>demo/</code></p>
+<h1 id="each-file-provides-the-neccessary-declarations-to-create-aws-resources-lets-prepare-our-enviornment-for-running-terraform-commands">Each file provides the neccessary declarations to create AWS resources. Let&rsquo;s prepare our enviornment for running terraform commands:</h1>
+<h2 id="terraform-initialize">Terraform Initialize:</h2>
+<p>In order for terraform to interact with the AWS API, lets set up the <code>demo/</code> directory for use in terraform:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ cd demo 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ terraform init
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Initializing the backend...
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span>Initializing provider plugins...                                          
+</span></span><span style="display:flex;"><span>- Reusing previous version of hashicorp/aws from the dependency lock file
+</span></span><span style="display:flex;"><span>- Using previously-installed hashicorp/aws v4.22.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Terraform has been successfully initialized!
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>You may now begin working with Terraform. Try running &#34;terraform plan&#34; to see
+</span></span><span style="display:flex;"><span>any changes that are required for your infrastructure. All Terraform commands
+</span></span><span style="display:flex;"><span>should now work.
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>If you ever set or change modules or backend configuration for Terraform,                                                                            
+</span></span><span style="display:flex;"><span>rerun this command to reinitialize your working directory. If you forget, other
+</span></span><span style="display:flex;"><span>commands will detect it and remind you to do so if necessary.
+</span></span></code></pre></div><ul>
+<li>I have previously ran the command in the <code>demo</code>  directory so it reads from the .terraform.lock.hcl file which contains the provider (AWS) info stated in the <code>provider.tf</code> file.</li>
+</ul>
+<hr>
+<h2 id="ssh-access">SSH Access:</h2>
+<p>In order to access our EC2 instance we need to create a SSH key on our local machine. The  <code>ec2_instance.tf</code>  file copies our public key associated with the key for use in creating an AWS Key-pair resource. Skip the prompts to add a passphrase as this key will only be used for the duration of the demo.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen -t ed25519 -C <span style="font-style:italic">&#34;terraform demo&#34;</span> -f ~/.ssh/demo-key <span style="font-style:italic">#creates an ssh key in your ssh directory. If you don&#39;t have one, create it. </span>
+</span></span></code></pre></div><p>Verify the key and it&rsquo;s associated public key are on your local machine, you should see two files named demo-key and demo-key.pub:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>ls -la ~/.ssh/
+</span></span></code></pre></div><p>Open the  <code>ec2_instance.tf</code> file and verify the aws_key_pair resource reflects the file path of public key. If you created a key with a different name, change it here to ensure it copies the correct public key:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-hcl" data-lang="hcl"><span style="display:flex;"><span><span style="font-weight:bold">resource</span> <span style="font-style:italic">&#34;aws_key_pair&#34; &#34;demo_ssh_key&#34;</span> {
+</span></span><span style="display:flex;"><span>  key_name   = <span style="font-weight:bold">var</span>.<span style="font-weight:bold">key_name</span>
+</span></span><span style="display:flex;"><span>  public_key = <span style="font-weight:bold">file</span>(<span style="font-style:italic">&#34;~/.ssh/demo-key.pub&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now we will be able to access the EC2 instance once it is created.</p>
+<hr>
+<h2 id="terraform-validate">Terraform Validate:</h2>
+<ul>
+<li>Once initialized, type <code>terraform validate</code> to verify the configuration is valid.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Success! The configuration is valid.
+</span></span></code></pre></div><hr>
+<h2 id="terraform-plan">Terraform Plan:</h2>
+<p>The <code>terraform validate</code> command ensures the configuration files work together and declare resources appropriately. <code>terraform plan</code>  creates a plan file that is used as the final instructions to create the resources and validates the configuration is correct.</p>
+<p>In this demo we are utilizing a <code>.tfvars</code> file to introduce inputs for variables at the plan phase of deployment (<code>dev.auto.tfvars</code>) . The <code>.tfvars</code> file by default is named <code>terraform.tfvars</code> but that can get confusing with thousands of resources or locally built modules (our demo/ directory is an example of a module that could be referenced in another config file in the root module) Terraform also recognizes <code>.auto.tfvars</code> .</p>
+<p>The <code>terraform plan</code> command has two useful arguments neccessary for the demo:</p>
+<p><code>-var-file=&quot;../dev.auto.tfvars&quot;</code>  - This references the inputs for variables declared in our demo directory/module and passes them along to the configuration as needed.</p>
+<p><code>-out=demo-plan</code>  - This outputs a plan file with the specified name. This is usual for testing or setting up different plan files based on use case. For the demo, name it something simple you can remember.</p>
+<p>Let&rsquo;s run the <code>terraform plan</code> command:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>terraform plan -var-file=<span style="font-style:italic">&#34;../dev.auto.tfvars&#34;</span> -out=demo-plan
+</span></span></code></pre></div><p>You should see alot of output showing resources and changes followed by instructions on how to create the resources at the bottom of your terminal:</p>
+<p>![[plan.png]]
+You can also review what resources will be created with the <code>terraform show</code> command:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>terraform show <span style="font-style:italic">&#34;demo-plan&#34;</span>
+</span></span></code></pre></div><p>Below is an example output of where the <code>ec2_instance.tf</code> file copies the public key for creating the AWS key pair:</p>
+<p>![[keypair.png]]</p>
+<hr>
+<h2 id="terraform-apply">Terraform Apply:</h2>
+<p>Now that we have created a terraform plan file, we can run <code>terraform apply</code> to begin creation of the AWS resources:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>terraform apply <span style="font-style:italic">&#34;demo-plan&#34;</span>
+</span></span></code></pre></div><p>Terraform will begin creating resources and provide updates as it begins and finishes creating resources:</p>
+<p>Example output:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>aws_vpc.dev: Creating...                                                                                                                                                                               
+</span></span><span style="display:flex;"><span>aws_key_pair.demo_ssh_key: Creating...                                                                                                                                                                 
+</span></span><span style="display:flex;"><span>aws_eip.devnatIP: Creating...
+</span></span><span style="display:flex;"><span>aws_key_pair.demo_ssh_key: Creation complete after 0s [id=dev-demo]
+</span></span><span style="display:flex;"><span>aws_eip.devnatIP: Creation complete after 1s [id=eipalloc-01501eabaec47d25b]
+</span></span><span style="display:flex;"><span>aws_vpc.dev: Still creating... [10s elapsed]
+</span></span><span style="display:flex;"><span>aws_vpc.dev: Creation complete after 12s [id=vpc-0c858786e38f2f210]
+</span></span><span style="display:flex;"><span>aws_subnet.dev-public-subnet: Creating...
+</span></span><span style="display:flex;"><span>aws_internet_gateway.dev-IGW: Creating...
+</span></span><span style="display:flex;"><span>aws_subnet.dev-private-subnet: Creating...
+</span></span><span style="display:flex;"><span>aws_security_group.terraform-ssh: Creating...
+</span></span><span style="display:flex;"><span>aws_internet_gateway.dev-IGW: Creation complete 
+</span></span></code></pre></div><p>Resource creation should take about 2-4 minutes depending on proximity from the us-east-1 AWS region. You should see the following type of output in your terminal (**Resource ARNs, IDs and Public IP will be different):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Apply complete! Resources: 13 added, 0 changed, 0 destroyed.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Outputs:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>id = &#34;i-066df87335634ad81&#34;
+</span></span><span style="display:flex;"><span>private_subnets = &#34;subnet-0b1eef62196293730&#34;
+</span></span><span style="display:flex;"><span>public_ip = &#34;100.26.243.84&#34; 
+</span></span><span style="display:flex;"><span>public_subnets = &#34;subnet-097d16be921f7a1b3&#34;
+</span></span><span style="display:flex;"><span>vpc_arn = &#34;arn:aws:ec2:us-east-1:710932396715:vpc/vpc-0c858786e38f2f210&#34;
+</span></span><span style="display:flex;"><span>vpc_cidr_block = &#34;10.0.0.0/16&#34;
+</span></span><span style="display:flex;"><span>vpc_id = &#34;vpc-0c858786e38f2f210&#34;
+</span></span></code></pre></div><hr>
+<h2 id="verify-ec2-ssh-access">Verify EC2 SSH Access:</h2>
+<p>Now we can SSH into our EC2 instance and verify Docker is installed as referenced in user_data arguement in the <code>ec2_instance.tf</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh -i ~/.ssh/demo-key ubuntu@PUBLICIP
+</span></span></code></pre></div><hr>
+<h2 id="testing-ec2-functionality-using-docker">Testing EC2 functionality using Docker:</h2>
+<p>Lets&rsquo; pull down a simple REST API container and run it:</p>
+<p>In your ssh terminal clone this repo down and cd into the directory:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/eaccmk/node-app-http-docker
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cd node-app-http-docker
+</span></span></code></pre></div><p>Repo contents:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ubuntu@ip-10-0-1-88:~/node-app-http-docker$ tree .
+</span></span><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── Dockerfile
+</span></span><span style="display:flex;"><span>├── LICENSE
+</span></span><span style="display:flex;"><span>├── README.md
+</span></span><span style="display:flex;"><span>├── app.js
+</span></span><span style="display:flex;"><span>├── controller.js
+</span></span><span style="display:flex;"><span>├── data.js
+</span></span><span style="display:flex;"><span>├── package.json
+</span></span><span style="display:flex;"><span>└── utils.js
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>0 directories, 8 files
+</span></span></code></pre></div><p>First let&rsquo;s build the docker image (this take about 1-2 minutes):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>docker build -t rest-api . 
+</span></span></code></pre></div><p>Verify the image was created:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>docker image ls 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ubuntu@ip-10-0-1-88:~/node-app-http-docker$ docker image ls
+</span></span><span style="display:flex;"><span>REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+</span></span><span style="display:flex;"><span>rest-api     latest    46d5f173ab6d   28 seconds ago   907MB
+</span></span><span style="display:flex;"><span>node         16        c6b745e900c7   5 days ago       907MB
+</span></span></code></pre></div><p>Now let&rsquo;s run the container:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>docker run --name restapi --rm -d -p 8080:8080 rest-api:latest
+</span></span></code></pre></div><p>We can test the REST API works by using the curl command:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl http://localhost:8080
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ubuntu@ip-10-0-1-88:~/node-app-http-docker$ curl http://localhost:8080
+</span></span><span style="display:flex;"><span>Welcome, this is your Home page
+</span></span></code></pre></div><p>We can also test the 404 response and a health check:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl http://localhost:8080/404
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ubuntu@ip-10-0-1-88:~/node-app-http-docker$ curl http://localhost:8080/404
+</span></span><span style="display:flex;"><span>{<span style="font-style:italic">&#34;message&#34;</span>:<span style="font-style:italic">&#34;Route not found&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>curl http://localhost:8080/health
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ubuntu@ip-10-0-1-88:~/node-app-http-docker$ curl http://localhost:8080/health
+</span></span><span style="display:flex;"><span>{<span style="font-style:italic">&#34;uptime&#34;</span>:209.060012355,<span style="font-style:italic">&#34;message&#34;</span>:<span style="font-style:italic">&#34;OK&#34;</span>,<span style="font-style:italic">&#34;timestamp&#34;</span>:1658095518470}
+</span></span></code></pre></div><hr>
+<h2 id="clean-up--terraform-destroy">Clean Up &amp; Terraform Destroy:</h2>
+<p>Let&rsquo;s stop the container and Log out of our EC2 instance:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>docker container stop restapi
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>exit
+</span></span></code></pre></div><p>Before we destory our Terraform resources let&rsquo;s review  the created resources:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>terraform state list
+</span></span></code></pre></div><p><code>terraform state</code> displays our resources by their resource name as specified in the .tf files. You should see the following resource IDs below. This is super helpful for defining resources and referencing them.</p>
+<p>Example output:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>aws_eip.devnatIP
+</span></span><span style="display:flex;"><span>aws_instance.terraform_ec2
+</span></span><span style="display:flex;"><span>aws_internet_gateway.dev-IGW
+</span></span><span style="display:flex;"><span>aws_key_pair.demo_ssh_key
+</span></span><span style="display:flex;"><span>aws_nat_gateway.NATgw
+</span></span><span style="display:flex;"><span>aws_route_table.dev-private-rt
+</span></span><span style="display:flex;"><span>aws_route_table.dev-public-rt
+</span></span><span style="display:flex;"><span>aws_route_table_association.dev-private-rt-association
+</span></span><span style="display:flex;"><span>aws_route_table_association.dev-public-rt-association
+</span></span><span style="display:flex;"><span>aws_security_group.terraform-ssh
+</span></span><span style="display:flex;"><span>aws_subnet.dev-private-subnet
+</span></span><span style="display:flex;"><span>aws_subnet.dev-public-subnet
+</span></span><span style="display:flex;"><span>aws_vpc.dev
+</span></span></code></pre></div><p><code>terraform destory</code>  looks at the terraform state and plan to decide on what resources to destory. We willl also reference the <code>dev.auto.tfvars</code> file during command execution to ensure resources are destroyed correctly.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>terraform destroy -var-file=&#34;../dev.auto.tfvars&#34;
+</span></span></code></pre></div><p>Terraform will ouput a list of resources and their changes (destroy) and a prompt to confirm deletion. type yes and press enter.</p>
+<p>Example output:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Do you really want to destroy all resources?
+</span></span><span style="display:flex;"><span>  Terraform will destroy all your managed infrastructure, as shown above.
+</span></span><span style="display:flex;"><span>  There is no undo. Only &#39;yes&#39; will be accepted to confirm.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Enter a value: 
+</span></span></code></pre></div><p>Resource teardown should take about 3-4 minutes.</p>
+<p>Example output:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>aws_internet_gateway.dev-IGW: Destruction complete after 3m41s
+</span></span><span style="display:flex;"><span>aws_vpc.dev: Destroying... [id=vpc-0c858786e38f2f210]
+</span></span><span style="display:flex;"><span>aws_vpc.dev: Destruction complete after 0s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Destroy complete! Resources: 13 destroyed.
+</span></span></code></pre></div><hr>
+<h2 id="conclusion">Conclusion:</h2>
+<p>Today we created AWS resources using Terraform and sprinkled in a litle Docker for fun. Stay tuned as we integrate version control with Terraform to make updating our infastructure as easy as a git push.</p>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              <br/><br/><p><a target='_blank' href='/'>Home</p>
+            </div>
+          </div>
+
+          
+
+
+
+          
+          
+          <div style="height: 50px;"></div>
+          
+        
+
+        <div class="site-footer">
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  
+
+<script>
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>
